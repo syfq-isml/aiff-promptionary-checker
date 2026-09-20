@@ -2,43 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
   <meta name="theme-color" content="#f4eadb">
-  <title>Promptionary</title>
+
+  <title>Promp-tionary</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Nunito:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <div class="app">
-    <aside class="sidebar" aria-label="Round navigation">
+
+    <!-- Top Navigation -->
+    <header class="top-nav">
+
       <div class="brand">
         <span class="brand-star" aria-hidden="true">✦</span>
-        <h1>Promptionary</h1>
-        <p>Picture your answer</p>
+
+        <div>
+          <h1>Promp-tionary</h1>
+          <p>Picture your answer</p>
+        </div>
       </div>
 
       <nav class="round-nav" aria-label="Rounds">
-        <button class="round-button active" data-round="1">Round 1</button>
-        <button class="round-button" data-round="2">Round 2</button>
-        <button class="round-button" data-round="3">Round 3</button>
+
+        <button
+          class="round-button active"
+          data-round="1"
+          type="button"
+        >
+          Round 1
+        </button>
+
+        <button
+          class="round-button"
+          data-round="2"
+          type="button"
+        >
+          Round 2
+        </button>
+
+        <button
+          class="round-button"
+          data-round="3"
+          type="button"
+        >
+          Round 3
+        </button>
+
+        <!-- Round 4 and 5 will be added here -->
         <div id="extra-rounds"></div>
+
+        <button
+          id="new-round"
+          class="new-round-button"
+          type="button"
+        >
+          <span aria-hidden="true">＋</span>
+          New Round
+        </button>
+
       </nav>
 
-      <button id="new-round" class="new-round-button" type="button">
-        <span aria-hidden="true">＋</span> New Round
-      </button>
-    </aside>
+    </header>
 
+
+    <!-- Main Content -->
     <main class="main-content">
-      <div class="paper">
-        <div class="round-badge" id="round-badge">ROUND 1</div>
-        <h2 id="round-title">Round 1</h2>
-        <p class="prompt">Type the answer you think matches the picture.</p>
 
+      <div class="paper">
+
+        <div class="round-badge" id="round-badge">
+          ROUND 1
+        </div>
+
+        <h2 id="round-title">
+          Round 1
+        </h2>
+
+        <p class="prompt">
+          Type the answer you think matches the picture.
+        </p>
+
+
+        <!-- Answer Form -->
         <form id="answer-form" novalidate>
-          <label for="answer">Your answer</label>
+
+          <label for="answer">
+            Your answer
+          </label>
+
           <textarea
             id="answer"
             name="answer"
@@ -50,21 +117,53 @@
           ></textarea>
 
           <div class="form-row">
-            <button class="submit-button" type="submit">Submit</button>
-            <p id="feedback" class="feedback" aria-live="polite"></p>
+
+            <button
+              class="submit-button"
+              type="submit"
+            >
+              Submit
+            </button>
+
+            <p
+              id="feedback"
+              class="feedback"
+              aria-live="polite"
+            ></p>
+
           </div>
+
         </form>
 
-        <div id="correct-message" class="correct-message" aria-live="polite" aria-hidden="true">
-          <span class="confetti-emoji" aria-hidden="true">🎉</span>
+
+        <!-- Correct message -->
+        <div
+          id="correct-message"
+          class="correct-message"
+          aria-live="polite"
+          aria-hidden="true"
+        >
+          <span aria-hidden="true">🎉</span>
           <span>CORRECT!</span>
-          <span class="confetti-emoji" aria-hidden="true">🎉</span>
+          <span aria-hidden="true">🎉</span>
         </div>
+
       </div>
+
     </main>
+
   </div>
 
-  <div id="confetti" class="confetti-container" aria-hidden="true"></div>
+
+  <!-- Confetti -->
+  <div
+    id="confetti"
+    class="confetti-container"
+    aria-hidden="true"
+  ></div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
